@@ -1,0 +1,16 @@
+<li [ngClass]="{'list-group-item-success': post.loveIts>0,
+                                        'list-group-item-danger': post.loveIts<0}" class="list-group-item">
+  <div class="row">
+    <div class="col-md-8">
+      <h4>{{post.titre}} <span *ngIf="post.loveIts!=0">({{absolute(post.loveIts)}})</span></h4>
+    </div>
+    <div class="col-md-4">
+      <p class="right">{{post.create_at | date: "dd/MM/yyyy HH:mm"}}</p>
+    </div>
+  </div>
+    <p>{{ post.content }}</p>
+    <div>
+      <button (click)="onLike()" class="btn btn-success"><span class="fa fa-thumbs-up"></span> Love it!</button>
+      <button (click)="onDislike()" class="btn btn-danger" style="margin-left: 10px"><span class="fa fa-thumbs-down"></span> Don't love it!</button>
+    </div>
+</li>
