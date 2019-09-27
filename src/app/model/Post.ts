@@ -6,10 +6,10 @@ export class Post {
   private _create_at: Date;
 
 
-  constructor(titre: string, content: string) {
+  constructor(titre: string, content: string, loves?: number) {
     this._titre = titre;
     this._content = content;
-    this._loveIts = 0;
+    this._loveIts = loves || 0;
     this._create_at = new Date();
   }
 

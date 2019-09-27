@@ -1,0 +1,36 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+  <main class="page">
+    <section class="clean-block clean-form dark">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="text-info">Nouveau post</h2>
+          <p>Remplissez les champs ci-dessous pour poster sur ce blog .</p>
+        </div>
+        <form name="addQuestionForm" #form="ngForm" (ngSubmit)="onSubmit(form)">
+          <div class="bg-danger text-white container" *ngIf="form.invalid && isSubmit">
+            <h3>Ce formulaire n'est pas valide</h3>
+            <ul>
+              <li *ngFor="let error of getFormValidationMessages(form)">
+                {{error}}
+              </li>
+            </ul>
+          </div>
+          <div class="form-group">
+            <label for="inputTitre">Titre</label>
+            <input type="text" name="titre" id="inputTitre" class="form-control" [(ngModel)]="titrePost" #titre="ngModel" required>
+          </div>
+          <div class="form-group">
+            <label for="inputContenu">Contenu</label>
+            <textarea name="contenu" id="inputContenu" rows="8" class="form-control" [(ngModel)]="contenuPost" #contenu="ngModel" required></textarea>
+          </div>
+          <div class="form-group mt-4">
+            <button class="btn btn-primary btn-block" [class.btn-secondary]="form.invalid" type="submit">
+              <i class="fa fa-plus"></i>   Poster!
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</div>

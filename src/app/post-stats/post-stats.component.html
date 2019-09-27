@@ -1,0 +1,25 @@
+<ul class="list-group" ng-show="questions.length>0">
+  <li class="list-group-item list-group-item-info">
+    Statistique sur les questions
+  </li>
+  <li class="list-group-item">
+    Nombre de posts:
+    <span class="badge badge-primary float-right">{{getNumberOfPost()}}</span>
+  </li>
+  <li class="list-group-item">
+    Nombre de posts Aimes:
+    <span class="badge badge-success float-right">{{getNumberOfPositives()}}</span>
+  </li>
+  <li class="list-group-item">
+    Nombre de posts pas aimes:
+    <span class="badge badge-danger float-right">{{getNumberOfNegatives()}}</span>
+  </li>
+  <li class="list-group-item">
+    Nombre de likes:
+    <span class="badge badge-info float-right">{{getNumberOfLikes()}}</span>
+  </li>
+  <li class="list-group-item">
+    Nombre de non likes:
+    <span class="badge badge-warning float-right">{{getNumberOfDislikes()}}</span>
+  </li>
+</ul>
